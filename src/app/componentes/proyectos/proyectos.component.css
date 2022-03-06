@@ -1,0 +1,30 @@
+
+  
+
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  .fw {
+  text-align: center;
+ 
+
+  }
+  .card-title {
+  font-weight: bold;
+  font-size: 15px;
+  }
+
+  .bg-light {
+    background-color: #bacbe0  !important;
+  }

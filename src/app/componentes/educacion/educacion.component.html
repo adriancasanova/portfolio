@@ -1,0 +1,122 @@
+<div class="container">
+    <h1 class="text-center">{{educacionList.educacionTitulo}}</h1>
+    <div class="row">
+      <div class="col-12 contenedor">
+
+
+        <div class="container prueba">
+            <div class="col-12">
+
+         
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mortarboard-fill imgPrueba" viewBox="0 0 16 16">
+                <path [attr.d]="educacionList.svgEducacionAUno"/>
+                <path [attr.d]="educacionList.svgEducacionADos"/>
+              </svg>
+
+              
+
+            
+            </div>
+          </div>
+
+
+
+        <div class="list-group experiencia">
+          <a
+            href="#"
+            class="list-group-item list-group-item-action d-flex gap-3 py-3"
+            aria-current="true"
+          >
+            
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              fill="currentColor"
+              class="bi bi-gear"
+              viewBox="0 0 16 16"
+            >
+              <path
+              [attr.d]="educacionList.svgEducacionBUno"
+              />
+              <path
+                [attr.d]="educacionList.svgEducacionBDos"
+              />
+            </svg>
+  
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">{{educacionList.educacionItenTituloUno}}</h6>
+                <p class="mb-0 opacity-75">
+                  {{educacionList.educacionDescripcionUno}}.
+                </p>
+              </div>
+            </div>
+          </a>
+          <a
+            href="#"
+            class="list-group-item list-group-item-action d-flex gap-3 py-3"
+            aria-current="true"
+          >
+           
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              fill="currentColor"
+              class="bi bi-folder-check"
+              viewBox="0 0 16 16"
+            >
+              <path
+              [attr.d]="educacionList.svgEducacionCUno"
+              />
+              <path
+                [attr.d]="educacionList.svgEducacionCDos"
+              />
+            </svg>
+  
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">{{educacionList.educacionItenTituloDos}}</h6>
+                <p class="mb-0 opacity-75">
+                 {{educacionList.educacionDescripcionDos}}
+                </p>
+              </div>
+            </div>
+          </a>
+          <a
+            href="#"
+            class="list-group-item list-group-item-action d-flex gap-3 py-3"
+            aria-current="true"
+          >
+           
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              fill="currentColor"
+              class="bi bi-graph-up-arrow"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                [attr.d]="educacionList.svgEducacionGrande"
+                />
+            </svg>
+  
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">{{educacionList.educacionItenTituloTres}}</h6>
+                <p class="mb-0 opacity-75">
+                  {{educacionList.educacionDescripcionTres}}
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+  
+        
+      </div>
+    </div>
+  </div>
+  

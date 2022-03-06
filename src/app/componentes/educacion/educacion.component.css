@@ -1,0 +1,29 @@
+
+
+      .experiencia {
+        width: 50%; 
+        
+  
+        }
+    
+    .prueba {
+       width: 50%; 
+       display: flex;
+    background-color: #edf5ff;
+    margin-right: 20px;
+       
+    }
+  
+  .imgPrueba {
+    
+     display: flex;
+      width: 65%;
+      height: 85%;
+      
+  }
+  
+  .contenedor {
+      display: inline-block;
+      display: flex;
+      width: 100%;
+  }

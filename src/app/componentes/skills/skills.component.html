@@ -1,0 +1,123 @@
+<h1>{{habilidad.habilidadesTitulo}}</h1>
+<div class="row contenedorSkills">
+  <div class="card" style="width: 18rem">
+    <div class="skill">
+      <div class="outer">
+        <div class="inner">
+          <div id="#number">90%</div>
+        </div>
+      </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        version="1.1"
+        width="160px"
+        height="160px"
+      >
+        <defs>
+          <linearGradient id="GradientColor">
+            <stop offset="0%" stop-color="#e91e63" />
+            <stop offset="100%" stop-color="#673ab7" />
+          </linearGradient>
+        </defs>
+        <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+      </svg>
+    </div>
+
+    <div class="card-body" *ngFor="let item of skillsSoftList">
+      <h5 class="card-title">{{item.skillTituloUno}}</h5>
+   
+      <ul class="list-group list-group-flush" >
+        <li class="list-group-item">{{item.skillUno}} </li>
+        <li class="list-group-item">{{item.skillDos}}</li>
+        <li class="list-group-item">{{item.skillTres}}</li>
+        <li class="list-group-item">{{item.skillCuatro}}</li>
+        <li class="list-group-item">{{item.skillCinco}}</li>
+        <li class="list-group-item">{{item.skillSeis}}</li>
+        <li class="list-group-item">{{item.skillSiete}}</li>
+      </ul>
+
+
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem">
+    <div class="skill">
+      <div class="outer">
+        <div class="inner">
+          <div id="#number">78%</div>
+        </div>
+      </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        version="1.1"
+        width="160px"
+        height="160px"
+      >
+        <defs>
+          <linearGradient id="GradientColor">
+            <stop offset="0%" stop-color="#e91e63" />
+            <stop offset="100%" stop-color="#673ab7" />
+          </linearGradient>
+        </defs>
+        <circle cx="80" cy="80" r="70" stroke-linecap="round" class="circle1" />
+      </svg>
+    </div>
+
+    <div class="card-body" *ngFor="let item of skillsHardList">
+      <h5 class="card-title">{{item.skillTituloUno}}</h5>
+    
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{item.skillUno}}</li>
+        <li class="list-group-item">{{item.skillDos}} </li>
+        <li class="list-group-item">{{item.skillTres}} </li>
+        <li class="list-group-item">{{item.skillCuatro}}</li>
+        <li class="list-group-item">{{item.skillCinco}}</li>
+
+      </ul>
+
+
+
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem">
+    <div class="skill">
+      <div class="outer">
+        <div class="inner">
+          <div id="#number">53%</div>
+        </div>
+      </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        version="1.1"
+        width="160px"
+        height="160px"
+      >
+        <defs>
+          <linearGradient id="GradientColor">
+            <stop offset="0%" stop-color="#e91e63" />
+            <stop offset="100%" stop-color="#673ab7" />
+          </linearGradient>
+        </defs>
+        <circle cx="80" cy="80" r="70" stroke-linecap="round" class="circle2" />
+      </svg>
+    </div>
+
+    <div class="card-body"  *ngFor="let item of inglesList">
+      <h5 class="card-title">{{item.inglesTitulo}}</h5>
+      
+     
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{item.skillUno}} </li>
+        <li class="list-group-item">{{item.skillDos}} </li>
+        <li class="list-group-item">{{item.skillTres}} </li>
+        <li class="list-group-item">{{item.skillCuatro}} </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
