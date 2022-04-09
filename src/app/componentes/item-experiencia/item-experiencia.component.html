@@ -1,0 +1,123 @@
+<div
+  class="list-group experiencia pad"
+  *ngFor="let experiencia of experiencias"
+  (onEliminarExperiencia)="eliminarExperiencia(experiencia)"
+>
+  <a
+    href="#"
+    class="list-group-item list-group-item-action d-flex gap-3 py-3"
+    aria-current="true"
+  >
+    <i class="{{ experiencia.experienciaLogo }}" style="font-size: 2em"></i>
+
+    <div class="d-flex gap-2 w-100 justify-content-between">
+      <div>
+        <h6 class="mb-0">{{ experiencia.experienciaTitulo }}</h6>
+        <p class="mb-0 opacity-75">
+          {{ experiencia.experienciaDescripcion }}
+        </p>
+      </div>
+    </div>
+  </a>
+
+  <fa-icon
+    class="iconA"
+    [icon]="faTimes"
+    *ngIf="adminBoton('/admin')"
+    (click)="eliminarExperiencia(experiencia)"
+  >
+  </fa-icon>
+
+  <fa-icon
+    class="iconB"
+    [icon]="faPen"
+    *ngIf="adminBoton('/admin')"
+    (click)="toggleEditExperiencia(experiencia)"
+    data-bs-toggle="modal"
+    data-bs-target="#staticBackdrop1"
+  >
+  </fa-icon>
+
+  <div
+    class="modal fade"
+    id="staticBackdrop1"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
+    tabindex="-1"
+    aria-labelledby="staticBackdropLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">
+            Editar Experiencia
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form class="add-form" (ngSubmit)="onEditarSubmit()">
+            <div class="form-control">
+              <label for="experienciaTitulo">Titulo</label>
+              <input
+                type="text"
+                name="experienciaTitulo"
+                id="experienciaTitulo"
+                placeholder="Editar titulo"
+                [(ngModel)]="experienciaTitulo"
+              />
+            </div>
+            <div class="form-control">
+              <label for="experienciaDescripcion">Descripcion</label>
+              <input
+                type="text"
+                name="experienciaDescripcion"
+                id="experienciaDescripcion"
+                placeholder="Editar descripcion"
+                [(ngModel)]="experienciaDescripcion"
+              />
+            </div>
+            <div class="form-control">
+              <label for="experienciaLogo">Logo</label>
+              <input
+                type="text"
+                name="experienciaLogo"
+                id="experienciaLogo"
+                placeholder="Editar logo"
+                [(ngModel)]="experienciaLogo"
+              />
+            </div>
+            <div class="form-control">
+              <label for="id">id </label>
+              <input
+                type="number"
+                name="id"
+                id="id"
+                placeholder="id"
+                [(ngModel)]="id"
+              />
+            </div>
+
+            <input
+              type="submit"
+              value="Editar"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--
+  
+<button class="btn boton" 
+ *ngIf="adminBoton('/admin')"
+(click)="toggleAddTask()">Añadir experiencia</button> -->

@@ -1,0 +1,41 @@
+{
+  "experiencias": [
+    {
+      "experienciaLogo": "bi bi-gear",
+      "experienciaTitulo": "Esto es una prueba",
+      "experienciaDescripcion": "lorem iposum",
+      "id": 1
+    },
+    {
+      "experienciaLogo": "bi bi-folder-check",
+      "experienciaTitulo": "prueba ",
+      "experienciaDescripcion": "asdasdasdasd",
+      "id": 2
+    },
+    {
+      "experienciaLogo": "bi bi-gear",
+      "experienciaTitulo": "prueba 4",
+      "experienciaDescripcion": "esto es una",
+      "id": 3
+    },
+    {
+      "experienciaLogo": " bi bi-folder-check",
+      "experienciaTitulo": "Esto es una prueba 4",
+      "experienciaDescripcion": "Wwwwww",
+      "id": 4
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "admin",
+      "password": "admin"
+    }
+  ],
+  "banners": [
+    {
+      "id": 1,
+      "banner": "./assets/imagenes/prueba2.jpg"
+    }
+  ]
+}

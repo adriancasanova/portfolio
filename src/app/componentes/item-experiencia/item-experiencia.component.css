@@ -1,0 +1,16 @@
+.iconA {
+  position: relative;
+  color: rgb(194, 149, 149);
+  margin-left: 96%;
+  z-index: 1;
+  margin-top: -48px;
+  cursor: pointer;
+}
+.iconB {
+  position: relative;
+  margin-left: 96%;
+  margin-top: -0px;
+  z-index: 1;
+  color: rgb(127, 118, 167);
+  cursor: pointer;
+}

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PorfolioService } from 'src/app/servicios/porfolio.service';
-
+import {faPen} from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-educacion',
   templateUrl: './educacion.component.html',
@@ -16,6 +16,7 @@ export class EducacionComponent implements OnInit {
 this.educacionList=data;
 
     })
+
   }
 
 }

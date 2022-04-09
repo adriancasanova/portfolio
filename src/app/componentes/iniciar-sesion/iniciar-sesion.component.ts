@@ -1,4 +1,4 @@
-/* import { Component, OnInit } from '@angular/core';
+ /*import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 //import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
@@ -36,9 +36,9 @@ get Password() {
 
 onEnviar(event: Event) {
   event.preventDefault;
-  this.autenticacionService.inciciarSesion(this.form.value).subscribe(data =>{
+  this.autenticacionService.iniciarSesion(this.form.value).subscribe(data =>{
     console.log("DATA: " + JSON.stringify(data));
-    this.ruta.navigate(['/portfolioEditar']);
+    this.ruta.navigate(['/portfolio']);
  
   })
 }

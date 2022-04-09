@@ -1,49 +1,49 @@
-/*
 import { Component, OnInit } from '@angular/core';
-
-//importando libreria de formulario
+import { UsersService } from 'src/app/servicios/users.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Users } from '../../users';
+import { HttpClient } from '@angular/common/http';
 
-
-
+//import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-
-  form: FormGroup;
-
-  // Inyectar en el constructor el formBuilder
-  constructor(private formBuilder: FormBuilder){ 
-    ///Creamos el grupo de controles para el formulario de login
-    this.form= this.formBuilder.group({
-      password:['',[Validators.required, Validators.minLength(8)]],
-      email:['', [Validators.required, Validators.email]],
-   })
-  }
-
-  ngOnInit() {}
-
-  get Password(){
-    return this.form.get("password");
-  }
  
-  get Mail(){
-   return this.form.get("email");
+  users: Users[] = [];
+  public loginForm!: FormGroup;
+  constructor(
+    private formBuilder: FormBuilder,
+    public userService: UsersService,
+    private http: HttpClient,
+    private route: Router
+  ) {}
+
+  ngOnInit(): void {
+    this.loginForm = this.formBuilder.group({
+      email: [''],
+      password: [''],
+    });
   }
 
-  get PasswordValid(){
-    return this.Password?.touched && !this.Password?.valid;
+  login() {
+    this.userService.loginA().subscribe((users) => {
+      const user = users.find((a: any) => {
+        return (
+          a.email === this.loginForm.value.email &&
+          a.password === this.loginForm.value.password
+        );
+      });
+      if (user) {
+        console.log(user);        
+        this.loginForm.reset();
+        this.route.navigate(['admin']);
+      } else {
+        alert('Login incorrecto');
+      }
+    });
   }
-
-  get MailValid() {
-    return false
-  }
- 
-
-
-
 }
-*/

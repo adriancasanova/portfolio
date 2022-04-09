@@ -1,12 +1,80 @@
+<div>
+  <div
+    id="carouselExampleSlidesOnly"
+    class="carousel slide"
+    data-ride="carousel"
+    *ngFor="let banner of banners"
+  >
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" [src]="banner.banner" alt="First slide" />
+      </div>
+      <fa-icon
+        class="icon"
+        [icon]="faPen"
+        data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop"
+        *ngIf="adminBoton('/admin')"
+      ></fa-icon>
+    </div>
+  </div>
 
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="staticBackdrop"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
+    tabindex="-1"
+    aria-labelledby="staticBackdropLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">
+            Agregar Experiencia
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
 
+        <div class="modal-body">
+          <form (ngSubmit)="onEditar(banner)">
+            <div class="form-control">
+              <label for="banner">Nuevo Banner</label>
+              <input
+                type="text"
+                name="banner"
+                id="banner"
+                placeholder="Añadir banner"
+                [(ngModel)]="banner"
+              />
+            </div>
+            <div class="form-control">
+              <label for="id">Id</label>
+              <input
+                type="number"
+                name="id"
+                id="id"
+                placeholder="desea cambiar el id"
+                [(ngModel)]="id"
+              />
+            </div>
 
-
-
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" [src]="imgBanner.bannerImg" alt="First slide">
-    </div>    
+            <input
+              type="submit"
+              value="Guardar"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

@@ -1,32 +1,36 @@
 .navbar-brand {
-    color: #fff;
-    font-weight: bold;
-    font-family: "Helvetica Neue", Helvetica, Arial;
-    position: absolute;
-    margin-left: 55px;
-    }
-    
-    .desabilitado {
-        font-weight: bold;
-        color: #fff;
-    
-    }
-    .navbar-collapse {
-    flex-grow: 0 !important; 
-    }
-    
-    .btn .btn-outline-light {
-        margin-right: 15px;
-        margin-left: 35px;
-        
-    }
-    
-    .color {
-    
-        color: #fff !important;
-    }
-    
-    .bg {
-    background-color: #bacbe0 !important;
+  color: #fff;
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial;
+  position: absolute;
+  margin-left: 55px;
+}
 
-    }
+.desabilitado {
+  font-weight: bold;
+  color: #fff;
+}
+.navbar-collapse {
+  flex-grow: 0 !important;
+}
+
+.btn .btn-outline-light {
+  margin-right: 15px;
+  margin-left: 35px;
+}
+
+.color {
+  color: #fff !important;
+}
+
+.bg {
+  background-color: #bacbe0 !important;
+}
+.icon {
+  color: rgb(127, 118, 167);
+  padding-right: 4px;
+}
+
+.logoUdemy {
+  width: bold !important;
+}
