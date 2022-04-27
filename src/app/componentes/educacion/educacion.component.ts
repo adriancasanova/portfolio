@@ -1,22 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { PorfolioService } from 'src/app/servicios/porfolio.service';
 import {faPen} from '@fortawesome/free-solid-svg-icons';
+import { EducacionService } from 'src/app/servicios/educacion.service';
+import { Educacion } from 'src/app/educacion';
 @Component({
   selector: 'app-educacion',
   templateUrl: './educacion.component.html',
   styleUrls: ['./educacion.component.css']
 })
 export class EducacionComponent implements OnInit {
-
-  constructor(private datosPorfolio:PorfolioService) { }
-  educacionList:any;
+  educacionTitulo: string = "Educacion";
+  constructor(private educacionService: EducacionService) { }
+  
   ngOnInit(): void {
-
-    this.datosPorfolio.obtenerDatos().subscribe(data => {
-this.educacionList=data;
-
-    })
-
   }
-
 }

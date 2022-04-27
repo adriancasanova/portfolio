@@ -1,6 +1,6 @@
-export interface Experiencia {
-  id?: number;
-  experienciaTitulo: string;
-  experienciaDescripcion: string;
-  experienciaLogo: string;
+export class Experiencia {
+  id: number = 0;
+  experienciaTitulo: string = ''; 
+  experienciaDescripcion : string = ''; 
+  experienciaLogo : string = ''; 
 }

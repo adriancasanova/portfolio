@@ -24,10 +24,11 @@ import { PorfolioService } from './servicios/porfolio.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { ItemExperienciaComponent } from './componentes/item-experiencia/item-experiencia.component';
-import { AddExperienciaComponent } from './componentes/add-experiencia/add-experiencia.component';
+
 //import { InterceptorService } from './servicios/interceptor.service';
 import { LoginComponent } from './componentes/login/login.component';
 import { AdminComponent } from './componentes/admin/admin.component';
+import { ItemEducacionComponent } from './componentes/item-educacion/item-educacion.component';
 
 @NgModule({
   declarations: [
@@ -42,12 +43,11 @@ import { AdminComponent } from './componentes/admin/admin.component';
     NavbarComponent,
     FooterComponent,
     //IniciarSesionComponent,
-    PortfolioComponent,
-    
-    ItemExperienciaComponent,
-    AddExperienciaComponent,
+    PortfolioComponent,    
+    ItemExperienciaComponent,  
     LoginComponent,
     AdminComponent,
+    ItemEducacionComponent,
   ],
   imports: [
     BrowserModule,

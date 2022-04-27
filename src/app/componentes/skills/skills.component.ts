@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { PorfolioService } from 'src/app/servicios/porfolio.service';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
+import { Soft } from 'src/app/soft';
+import { Idiomas } from 'src/app/idiomas';
+import { Hard } from 'src/app/hard';
+import { SoftService } from 'src/app/servicios/soft.service';
+import { HardService } from 'src/app/servicios/hard.service';
+import { IdiomasService } from 'src/app/servicios/idiomas.service';
 
 @Component({
   selector: 'app-skills',
@@ -8,32 +13,33 @@ import { faPen } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./skills.component.css'],
 })
 export class SkillsComponent implements OnInit {
-  constructor(private datosPorfolio: PorfolioService) {}
-  faPen = faPen;
-  skillsSoftList: any;
-  habilidad: any;
-  skillsHardList: any;
-  inglesList: any;
-  skillsList: any;
-  ngOnInit(): void {
-    this.datosPorfolio.obtenerDatos().subscribe((data) => {
-      this.skillsSoftList = data.SkillsSoftList;
+  constructor(private softService: SoftService, private hardService: HardService, private idiomasService: IdiomasService) {}
+  skillSoft: string = "Soft Skills";
+  skillHard: string = "Hard Skills";
+  idiomasTitulo: string = "Nivel de Ingles";
+  habilidadesTitulo: string = "Habilidades"
+  softs: Soft[] = [];
+  hards: Hard[] = [];
+  idiomas: Idiomas[] = [];
+  faPen = faPen; 
+  ngOnInit(): void {  
+
+    this.softService.getSoft().subscribe((softs) => {
+      this.softs = softs;
     });
 
-    this.datosPorfolio.obtenerDatos().subscribe((data) => {
-      this.habilidad = data;
+    this.hardService.getHard().subscribe((hards) => {
+      this.hards = hards;
     });
 
-    this.datosPorfolio.obtenerDatos().subscribe((data) => {
-      this.skillsSoftList = data.skillsSoft;
+    this.idiomasService.getIdiomas().subscribe((idiomas) => {
+      this.idiomas = idiomas;
     });
 
-    this.datosPorfolio.obtenerDatos().subscribe((data) => {
-      this.skillsHardList = data.skillsHard;
-    });
 
-    this.datosPorfolio.obtenerDatos().subscribe((data) => {
-      this.inglesList = data.manejoIdiomas;
-    });
   }
+
+
+
+
 }

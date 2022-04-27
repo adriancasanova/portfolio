@@ -1,46 +1,63 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { PorfolioService } from 'src/app/servicios/porfolio.service';
 import { Banner } from 'src/app/banner';
 import { BannerService } from 'src/app/servicios/banner.service';
 import { Router } from '@angular/router';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 import { Subscription } from 'rxjs';
+import {FormBuilder, FormGroup} from '@angular/forms';
 @Component({
   selector: 'app-banner',
   templateUrl: './banner.component.html',
   styleUrls: ['./banner.component.css'],
 })
 export class BannerComponent implements OnInit {
-  banners: Banner[] = [];
-  banner: any = '';
-  bannerList: any;
+ 
   faPen = faPen;
-  id: any = '';
-  constructor(
-    private datosPorfolio: PorfolioService,
+ 
+
+  formValue !: FormGroup;
+  bannerModelObj: Banner = new Banner();
+  bannerData !: any;
+  constructor(   
     private route: Router,
-    private bannerService: BannerService
+    private bannerService: BannerService,
+    private formBuilder: FormBuilder
   ) {}
   ngOnInit(): void {
-    this.datosPorfolio.obtenerDatos().subscribe((data) => {
-      this.bannerList = data;
-    });
-
-    this.bannerService.getBanner().subscribe((banners) => {
-      this.banners = banners;
-    });
+    this.formValue = this.formBuilder.group({
+      bannerImg: [''],     
+    })
+    this.getAllBanner();
   }
 
   adminBoton(route: string) {
     return this.route.url === route;
   }
 
-  onEditar(banner: Banner) {
-    this.banner = banner;
-    this.banner.id = banner.id;
-    this.bannerService.actualizarBanner(banner).subscribe((banner) => {
-      this.banners.push(banner);
-    });
-    console.log(this.banner.id);
+
+  onEditBanner(banner: any){
+    this.bannerModelObj.id = banner.id;
+   this.formValue.controls['banner'].setValue(banner.bannerImg);
+     
+   }
+   
+   updateBannerDetails() {
+     this.bannerModelObj.bannerImg = this.formValue.value.bannerImg;   
+     this.bannerService.updateBanner(this.bannerModelObj, this.bannerModelObj.id)
+     .subscribe(res => {
+       alert ("Actualizado");
+       let ref = document.getElementById('cancel')
+       ref?.click();
+       this.formValue.reset();
+       this.getAllBanner();      
+     })
+   }
+
+   getAllBanner () {
+    this.bannerService.getsBanner().subscribe(res => {
+   this.bannerData = res; 
+    })
   }
+  
+  
 }

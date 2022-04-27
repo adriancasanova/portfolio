@@ -45,3 +45,12 @@
     width: 100%;
   }
 }
+.iconB {
+  position: absolute;
+  margin-left: 16%;
+  margin-top: 200px;
+  z-index: 1;
+  color: rgb(127, 118, 167);
+  cursor: pointer;
+  z-index: 2;
+}

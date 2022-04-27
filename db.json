@@ -1,28 +1,28 @@
 {
   "experiencias": [
     {
-      "experienciaLogo": "bi bi-gear",
+      "id": 2,      
+      "experienciaTitulo": "prueba 1",
+      "experienciaDescripcion": "Loren ipsum dolor sit amet consectetur adipisicing elit. Est id quia delectus vitae libero aliquid iure quos sapiente earum. Explicabo, voluptates officiis sit obcaecati beatae ipsam vel nulla iusto! ut.",
+      "experienciaLogo": "bi bi-folder-check"
+    },
+    {
+      "id": 3,      
+      "experienciaTitulo": "prueba 5",
+      "experienciaDescripcion": "Loren ipsum dolor sit amet consectetur adipisicing elit. Est id quia delectus vitae libero aliquid iure quos sapiente earum. Explicabo, voluptates officiis sit obcaecati beatae ipsam vel nulla iusto! ut.",
+      "experienciaLogo": "bi bi-gear"
+    },
+    {
+      "id": 4,
       "experienciaTitulo": "Esto es una prueba",
-      "experienciaDescripcion": "lorem iposum",
-      "id": 1
+      "experienciaDescripcion": "Loren ipsum dolor sit amet consectetur adipisicing elit. Est id quia delectus vitae. Explicabo, voluptates officiis sit obcaecati beatae ipsam vel nulla iusto! ut.",
+      "experienciaLogo": " bi bi-folder-check"
     },
     {
-      "experienciaLogo": "bi bi-folder-check",
-      "experienciaTitulo": "prueba ",
-      "experienciaDescripcion": "asdasdasdasd",
-      "id": 2
-    },
-    {
-      "experienciaLogo": "bi bi-gear",
-      "experienciaTitulo": "prueba 4",
-      "experienciaDescripcion": "esto es una",
-      "id": 3
-    },
-    {
-      "experienciaLogo": " bi bi-folder-check",
-      "experienciaTitulo": "Esto es una prueba 4",
-      "experienciaDescripcion": "Wwwwww",
-      "id": 4
+      "id": 5,
+      "experienciaTitulo": "Esto es una prueba 5",
+      "experienciaDescripcion": "Loren ipsum dolor sit amet consectetur adipisicing elit. Est id quia delectus vitae libero aliquid iure quos sapiente earum. Explicabo",
+      "experienciaLogo": "bi bi-gear"
     }
   ],
   "users": [
@@ -35,7 +35,167 @@
   "banners": [
     {
       "id": 1,
-      "banner": "./assets/imagenes/prueba2.jpg"
+      "banner": "./assets/imagenes/imgBanner.jpg"
+    }
+  ],
+  "abouts": [
+    {
+      "id": 1,
+      "aboutNombre": "Adrian Casanova",
+      "aboutDescripcion": "Full Stack Developer Jr. \n Actitud emprendedora. \n Siempre buscando superarme y alcanzar nuevas metas. \n Autodidacta y apasionado del conocimiento. \n Soy de las personas que creen que se puede superar cualquier obstáculo con trabajo, \n actitud y persistencia. \n Disfruto trabajar en equipo. \n Muy responsable, \n puntual y dedicado. Enfocado al logro de objetivos. \n Siempre con buena onda y positivo.",
+      "aboutImg": "./assets/imagenes/imagenAbout.jpg"
+    }
+  ],
+  "navbars": [
+    {
+      "id": 1,
+      "logo": "bi bi-youtube",
+      "link": "https://www.youtube.com/channel/UCsgxSC7C2RW6Ukhh-oeh8lA"
+    },
+    {
+      "id": 2,
+      "logo": "bi bi-type-underline",
+      "link": "https://www.udemy.com/course/como-comprar-bitcoin-desde-cero/learn/lecture/29685940?instructorPreviewMode=instructor_v4#content"
+    },
+    {
+      "id": 3,
+      "logo": "bi bi-github",
+      "link": "https://github.com/adriancasanova"
+    },
+    {
+      "id": 4,
+      "logo": "bi bi-linkedin",
+      "link": "https://www.linkedin.com/in/adri%C3%A1n-casanova-0a5656223/"
+    },
+    {
+      "id": 5,
+      "logo": "bi bi-whatsapp",
+      "link": "https://wa.me/3415944125"
+    },
+    {
+      "id": 6,
+      "logo": "bi bi-envelope-fill",
+      "link": "adriancasanova_@outlook.es"
+    }
+  ],
+  "educaciones": [
+    {
+      "id": 1,
+      "educacionTitulo": "Loren ipsum",
+      "educacionDescripcion": "Loren ipsum dolor sit amet consectetur adipisicing elit. Est id quia delectus vitae libero aliquid iure quos sapiente earum. Explicabo, voluptates officiis sit obcaecati beatae ipsam vel nulla iusto! ut.",
+      "educacionLogo": "bi bi-gear"
+    },
+    {
+      "id": 2,
+      "educacionTitulo": "Loren ipsum",
+      "educacionDescripcion": "Loren ipsum dolor sit amet consectetur adipisicing elit. Est id quia delectus vitae libero aliquid iure quos sapiente earum. Explicabo, voluptates officiis sit obcaecati beatae ipsam vel nulla iusto! ut.",
+      "educacionLogo": "bi bi-folder-check"
+    },
+    {
+      "id": 3,
+      "educacionTitulo": "Loren ipsum dolor sit amet",
+      "educacionDescripcion": "Loren ipsum dolor sit amet consectetur adipisicing elit. Est id quia delectus vitae libero aliquid iure quos sapiente earum. Explicabo, voluptates officiis sit obcaecati beatae ipsam vel nulla iusto! ut.",
+      "educacionLogo": "bi bi-graph-up-arrow"
+    },
+    {
+      "id": 4,
+      "educacionTitulo": "Esto es una prueba",
+      "educacionDescripcion": "Esto es una prueba 2",
+      "educacionLogo": "bi bi-gear"
+    }
+  ],
+  "proyectos": [
+    {
+      "id": 1,
+      "proyectoTitulo": "Lorem ipsum",
+      "proyectoDescripcion": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo odio rem cupiditate nobis ipsum doloremque.",
+      "proyectoFecha": "18/08/2020"
+    },
+    {
+      "id": 2,
+      "proyectoTitulo": "Lorem ipsum",
+      "proyectoDescripcion": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo odio rem cupiditate nobis ipsum doloremque.",
+      "proyectoFecha": "08/01/2021"
+    },
+    {
+      "id": 3,
+      "proyectoTitulo": "Lorem ipsum",
+      "proyectoDescripcion": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo odio rem cupiditate nobis ipsum doloremque.",
+      "proyectoFecha": "06/05/2021"
+    }
+  ],
+  "softs": [
+    {
+      "id": 1,
+      "skill": "Reciliencia "
+    },
+    {
+      "id": 2,
+      "skill": "Compromiso, motivacion y autodiciplina"
+    },
+    {
+      "id": 3,
+      "skill": "Curiosidad y marcada actitud autodidacta"
+    },
+    {
+      "id": 4,
+      "skill": "Reflexivo y empatico"
+    },
+    {
+      "id": 5,
+      "skill": "Capacidad de integracion y para trabajar en equipo"
+    },
+    {
+      "id": 6,
+      "skill": "Habilidades analiticas y de organización"
+    },
+    {
+      "id": 7,
+      "skill": "Metodologias agiles y Scrum"
+    }
+  ],
+
+  
+  "hards": [
+    {
+      "id": 1,
+      "skill": "Desarrollo Frontend (JavaScript, CSS, HTML, TipeScript, Bootstrap, Angular) "
+    },
+    {
+      "id": 2,
+      "skill": "Desarrollo Backend (Ruby on Retail, Java, Sql, Spring Boot)"
+    },
+    {
+      "id": 3,
+      "skill": "Herramientas DevOps, Control de versiones (Git y Github)"
+    },
+    {
+      "id": 4,
+      "skill": "JWT (JSON Web Token)"
+    },
+    {
+      "id": 5,
+      "skill": "Programacion orientada a objetos (POO)"
+    }
+  ],
+
+
+  "idiomas": [
+    {
+      "id": 1,
+      "skill": "Nivel medio de ingles hablado"
+    },
+    {
+      "id": 2,
+      "skill": "Nivel medio de ingles tecnico orientado a programacion y tecnologia"
+    },
+    {
+      "id": 3,
+      "skill": "Comprencion media de dialogos nativos"
+    },
+    {
+      "id": 4,
+      "skill": "Actualmente perfeccionando mis habilidades"
     }
   ]
 }

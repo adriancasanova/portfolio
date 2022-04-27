@@ -1,97 +1,92 @@
-
-
-<div class="container-fluid about col-lg-6 col-sm-4"> 
+<div
+  class="container-fluid about col-lg-6 col-sm-4"
+  *ngFor="let about of aboutData"
+>
   <div class="row">
     <div class="col-lg-4">
-    <div class="imagenAbout">
-        <img [src]="miPorfolio.aboutImg" class="imgRedonda"/>
-        </div>  
-    
+      <div class="imagenAbout">
+        <img [src]="about.aboutImg" class="imgRedonda" />
+      </div>
     </div>
 
     <div class="col-lg-4">
-      <h2>{{miPorfolio.aboutNombre}}</h2>
-      <p> {{miPorfolio.aboutDescripcion}} </p> 
-      
+      <h2>{{ about.aboutNombre }}</h2>
+      <p>{{ about.aboutDescripcion }}</p>
     </div>
-    
-   
-   </div>
-   <fa-icon class="icon"
-        [icon]="faPen"
-        data-bs-toggle="modal" 
-        data-bs-target="#staticBackdrop3"        
-        ></fa-icon>
-   </div>
+  </div>
 
-   <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true"
+  <fa-icon
+    class="icon"
+    [icon]="faPen"
+    data-bs-toggle="modal"
+    data-bs-target="#staticBackdropAbout"
+    (click)="onEdit(about)"
+    *ngIf="adminBoton('/admin')"
+  ></fa-icon>
 
-   >
-     <div class="modal-dialog">
-       <div class="modal-content">
-         <div class="modal-header">
-           <h5 class="modal-title" id="staticBackdropLabel">Editar Navbar</h5>
-           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-         </div>
-         <div class="modal-body">
-   
-          
-   <form 
-   class="add-form" 
-   (ngSubmit)="onNavbarSubmit()"
-   
-   >
-   <div class="form-control" >
-       <label for="foto">Foto de perfil</label>
-       <input 
-       
-       type="text" 
-       name="foto" 
-       id="foto" 
-       placeholder="Agregar foto"
-       [(ngModel)]="foto"
-       
-       />
-   </div> 
-   <div class="form-control">
-       <label for="tituloAbout">Titulo</label>
-       <input 
-       
-       type="text" 
-       name="tituloAbout" 
-       id="tituloAbout" 
-       placeholder="Editar titulo"
-       [(ngModel)]="tituloAbout"
-   
-       />    
-   </div>
+  <div
+    class="modal fade"
+    id="staticBackdropAbout"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
+    tabindex="-1"
+    aria-labelledby="staticBackdropLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Editar About</h5>
+          <button
+            type="button"
+            id="cancel"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form class="add-form" [formGroup]="formValue">
+            <div class="form-control">
+              <label for="aboutNombre">Titulo</label>
+              <input
+                type="text"
+                formControlName="aboutNombre"
+                id="aboutNombre"
+                placeholder="Editar nombre"
+              />
+            </div>
 
-   <div class="form-control">
-    <label for="descripcionAbout"> Descripcion  </label>
-    <input 
-    type="text" 
-    name="descripcionAbout" 
-    id="descripcionAbout" 
-    placeholder="descripcionAbout" 
-    [(ngModel)]="descripcionAbout"
-    />
-  </div>  
-    
-   <div class="form-control">
-     <label for="id">id  </label>
-     <input 
-     type="number" 
-     name="id" 
-     id="id" 
-     placeholder="id" 
-     [(ngModel)]="id"
-     />
-   </div>  
-   
-   <input type="submit" value="Editar" class="btn btn-primary" data-bs-dismiss="modal">
-   </form>
-   
-         </div>       
-       </div>
-     </div>
-   </div> 
+            <div class="form-control">
+              <label for="aboutDescripcion"> Descripcion </label>
+              <input
+                type="text"
+                formControlName="aboutDescripcion"
+                id="aboutDescripcion"
+                placeholder="Agregar descripcion"
+              />
+            </div>
+
+            <div class="form-control">
+              <label for="aboutImg">Foto de perfil</label>
+              <input
+                type="text"
+                formControlName="aboutImg"
+                id="aboutImg"
+                placeholder="Agregar foto"
+              />
+            </div>
+
+            <input
+              type="submit"
+              value="Editar"
+              (click)="updateAboutDetails()"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

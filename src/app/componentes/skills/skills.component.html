@@ -1,5 +1,7 @@
-<h1>{{ habilidad.habilidadesTitulo }}</h1>
+<h1>{{ habilidadesTitulo }}</h1>
 <div class="row contenedorSkills">
+
+
   <div class="card" style="width: 18rem">
     <div class="skill">
       <div class="outer">
@@ -23,20 +25,15 @@
       </svg>
     </div>
 
-    <div class="card-body" *ngFor="let item of skillsSoftList">
-      <h5 class="card-title">{{ item.skillTitulo }}</h5>
+    <div class="card-body" >
+      <h5 class="card-title">{{ skillSoft }}</h5>
 
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">{{ item.skillUno }}</li>
-        <li class="list-group-item">{{ item.skillDos }}</li>
-        <li class="list-group-item">{{ item.skillTres }}</li>
-        <li class="list-group-item">{{ item.skillCuatro }}</li>
-        <li class="list-group-item">{{ item.skillCinco }}</li>
-        <li class="list-group-item">{{ item.skillSeis }}</li>
-        <li class="list-group-item">{{ item.skillSiete }}</li>
+      <ul class="list-group list-group-flush" *ngFor="let item of softs">
+        <li class="list-group-item">{{ item.skill }}</li>    
       </ul>
     </div>
   </div>
+
 
   <div class="card" style="width: 18rem">
     <div class="skill">
@@ -61,18 +58,15 @@
       </svg>
     </div>
 
-    <div class="card-body" *ngFor="let item of skillsHardList">
-      <h5 class="card-title">{{ item.skillTituloUno }}</h5>
+    <div class="card-body" >
+      <h5 class="card-title">{{ skillHard }}</h5>
 
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">{{ item.skillUno }}</li>
-        <li class="list-group-item">{{ item.skillDos }}</li>
-        <li class="list-group-item">{{ item.skillTres }}</li>
-        <li class="list-group-item">{{ item.skillCuatro }}</li>
-        <li class="list-group-item">{{ item.skillCinco }}</li>
+      <ul class="list-group list-group-flush" *ngFor="let item of hards">
+        <li class="list-group-item">{{ item.skill }}</li>    
       </ul>
     </div>
   </div>
+
 
   <div class="card" style="width: 18rem">
     <div class="skill">
@@ -97,15 +91,14 @@
       </svg>
     </div>
 
-    <div class="card-body" *ngFor="let item of inglesList">
-      <h5 class="card-title">{{ item.inglesTitulo }}</h5>
+    <div class="card-body" >
+      <h5 class="card-title">{{ idiomasTitulo }}</h5>
 
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">{{ item.skillUno }}</li>
-        <li class="list-group-item">{{ item.skillDos }}</li>
-        <li class="list-group-item">{{ item.skillTres }}</li>
-        <li class="list-group-item">{{ item.skillCuatro }}</li>
+      <ul class="list-group list-group-flush"*ngFor="let item of idiomas" >
+        <li class="list-group-item">{{ item.skill }}</li>      
       </ul>
     </div>
   </div>
+
+
 </div>

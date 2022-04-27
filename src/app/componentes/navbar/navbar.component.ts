@@ -1,27 +1,45 @@
 import { Component, OnInit } from '@angular/core';
-import { PorfolioService } from 'src/app/servicios/porfolio.service';
 import { Router } from '@angular/router';
 import { LoginComponent } from '../login/login.component';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
+import { NavbarService } from 'src/app/servicios/navbar.service';
+import { Navbar } from 'src/app/navbar';
+import { FormBuilder, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-  link: string = '';
-  id: any = '';
-  logo: string = '';
   user: any;
+  navbarBrand: string = '#YoProgramo';
+  navbarLogo: string = 'assets/imagenes/logoArgentinaPrograma2.jpg';
+  loginboton: string = 'Login';
 
-  constructor(private datosPorfolio: PorfolioService, private router: Router) {}
+  formValue!: FormGroup;
+  navbarModelObj: Navbar = new Navbar();
+  navbarData!: any;
+  constructor(
+    private router: Router,
+    private navbarService: NavbarService,
+    private formBuilder: FormBuilder
+  ) {}
   faPen = faPen;
-  navbarList: any;
+
   ngOnInit(): void {
-    this.datosPorfolio.obtenerDatos().subscribe((data) => {
-      this.navbarList = data.navbar;
+    this.formValue = this.formBuilder.group({
+      logo: [''],
+      link: [''],
+    });
+    this.getAllNavbar();
+  }
+
+  getAllNavbar() {
+    this.navbarService.getsNavbar().subscribe((res) => {
+      this.navbarData = res;
     });
   }
+
   hasRoute(route: string) {
     return this.router.url === route;
   }
@@ -31,9 +49,5 @@ export class NavbarComponent implements OnInit {
 
   Loguear(route: string) {
     return this.router.url === route;
-  }
-
-  onNavbarSubmit() {
-    console.log('funciona');
   }
 }

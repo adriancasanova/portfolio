@@ -3,18 +3,19 @@
     id="carouselExampleSlidesOnly"
     class="carousel slide"
     data-ride="carousel"
-    *ngFor="let banner of banners"
+    *ngFor="let banner of bannerData"
   >
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block w-100" [src]="banner.banner" alt="First slide" />
+        <img class="d-block w-100" [src]="banner.bannerImg" alt="First slide" />
       </div>
       <fa-icon
         class="icon"
         [icon]="faPen"
         data-bs-toggle="modal"
-        data-bs-target="#staticBackdrop"
+        data-bs-target="#staticBackdropBanner"
         *ngIf="adminBoton('/admin')"
+        (click)="onEditBanner(banner)"   
       ></fa-icon>
     </div>
   </div>
@@ -22,7 +23,7 @@
   <!-- Modal -->
   <div
     class="modal fade"
-    id="staticBackdrop"
+    id="staticBackdropBanner"
     data-bs-backdrop="static"
     data-bs-keyboard="false"
     tabindex="-1"
@@ -33,7 +34,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="staticBackdropLabel">
-            Agregar Experiencia
+            Editar banner
           </h5>
           <button
             type="button"
@@ -44,33 +45,25 @@
         </div>
 
         <div class="modal-body">
-          <form (ngSubmit)="onEditar(banner)">
+          <form [formGroup]="formValue">
             <div class="form-control">
               <label for="banner">Nuevo Banner</label>
               <input
                 type="text"
-                name="banner"
-                id="banner"
+                formControlName="bannerImg"
+                id="bannerImg"
                 placeholder="Añadir banner"
-                [(ngModel)]="banner"
+               
               />
             </div>
-            <div class="form-control">
-              <label for="id">Id</label>
-              <input
-                type="number"
-                name="id"
-                id="id"
-                placeholder="desea cambiar el id"
-                [(ngModel)]="id"
-              />
-            </div>
+           
 
             <input
               type="submit"
               value="Guardar"
               class="btn btn-primary"
               data-bs-dismiss="modal"
+              (click)="updateBannerDetails()"
             />
           </form>
         </div>

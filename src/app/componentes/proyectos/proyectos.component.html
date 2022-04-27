@@ -1,14 +1,15 @@
-<main *ngFor="let item of proyectosList">
+<main >
   <div class="row py-lg-5 padd">
     <div class="col-lg-6 col-md-8 mx-auto">
-      <h1 class="fw">{{ item.proyectoTituloPrincipal }}</h1>
+      <h1 class="fw">{{ proyectoTitulo }}</h1>
     </div>
   </div>
 
   <div class="album py-5 bg-light">
     <div class="container">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        <div class="col">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" >
+
+        <div class="col" *ngFor="let item of proyectos">
           <div class="card shadow-sm">
             <svg
               class="bd-placeholder-img card-img-top"
@@ -26,8 +27,8 @@
             </svg>
 
             <div class="card-body">
-              <p class="card-title">{{ item.proyectoTituloUno }}</p>
-              <p class="card-text">{{ item.proyectoDescripcionUno }}</p>
+              <p class="card-title">{{ item.proyectoTitulo }}</p>
+              <p class="card-text">{{ item.proyectoDescripcion }}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button
@@ -37,80 +38,12 @@
                     Ver
                   </button>
                 </div>
-                <small class="text-muted">{{ item.proyectoFechaUno }}</small>
+                <small class="text-muted">{{ item.proyectoFecha }}</small>
               </div>
             </div>
           </div>
-        </div>
+        </div>      
 
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg
-              class="bd-placeholder-img card-img-top"
-              width="100%"
-              height="225"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder: Thumbnail"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="#55595c" />
-              <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-            </svg>
-
-            <div class="card-body">
-              <p class="card-title">{{ item.proyectoTituloDos }}</p>
-              <p class="card-text">{{ item.proyectoDescripcionDos }}</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button
-                    type="button"
-                    class="btn btn-sm btn-outline-secondary"
-                  >
-                    Ver
-                  </button>
-                </div>
-                <small class="text-muted">{{ item.proyectoFechaDos }}</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg
-              class="bd-placeholder-img card-img-top"
-              width="100%"
-              height="225"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder: Thumbnail"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="#55595c" />
-              <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-            </svg>
-
-            <div class="card-body">
-              <p class="card-title">{{ item.proyectoTituloTres }}</p>
-              <p class="card-text">{{ item.proyectoDescripcionTres }}</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button
-                    type="button"
-                    class="btn btn-sm btn-outline-secondary"
-                  >
-                    Ver
-                  </button>
-                </div>
-                <small class="text-muted">{{ item.proyectoFechaTres }}</small>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>

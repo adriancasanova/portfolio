@@ -16,7 +16,8 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class UsersService {
-  private apiUrl: string = 'http://localhost:5000/users';
+  //private apiUrl: string = 'http://localhost:5000/users';
+  private apiUrl: string = 'http://localhost:8080/portfolio/users/';
   constructor(private http: HttpClient) {}
 
   
