@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginComponent } from '../login/login.component';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 import { NavbarService } from 'src/app/servicios/navbar.service';
 import { Navbar } from 'src/app/navbar';

@@ -1,6 +1,6 @@
  <div class="list-group educacion " *ngFor="let educacion of educacionData">
     <a
-      href="#"
+      
       class="list-group-item list-group-item-action d-flex gap-3 py-3"
       aria-current="true"
     >     
@@ -15,15 +15,14 @@
       </div>
     </a> 
 
-
-
+<!-- BOTON PARA ELIMINAR -->
     <fa-icon
     class="iconA"
     [icon]="faTimes"
     *ngIf="adminBoton('/admin')"
     (click)="deleteEducacion(educacion)"     >
   </fa-icon>
-
+<!-- BOTON PARA EDITAR -->
   <fa-icon
     class="iconB"
     [icon]="faPen"
@@ -34,7 +33,7 @@
   >
   </fa-icon>
 
-  
+  <!-- MODAL PARA EDITAR -->
   <div 
     class="modal fade"
     id="staticBackdropEducacion"
@@ -69,8 +68,7 @@
                 type="text"
                 formControlName="educacionTitulo"
                 id="educacion"
-                placeholder="Editar titulo"
-              
+                placeholder="Editar titulo"              
               />
               
             </div>
@@ -80,8 +78,7 @@
                 type="text"
                 formControlName="educacionDescripcion"
                 id="educacionDescripcion"
-                placeholder="Editar descripcion"
-             
+                placeholder="Editar descripcion"             
               />
             </div>
             <div class="form-control">
@@ -90,15 +87,14 @@
                 type="text"
                 formControlName="educacionLogo"
                 id="educacionLogo"
-                placeholder="Editar logo"
-              
+                placeholder="Editar logo"              
               />
             </div>          
 
             <input
               type="submit"
               value="Editar"
-              class="btn btn-primary"
+              class="btn btn-secondary"
               data-bs-dismiss="modal"
               (click)="updateEducacionDetails()"
             />
@@ -107,15 +103,11 @@
       </div>
     </div>
   </div>   
-
  </div>    
-
-
-
- <button class="btn btn-primary btn-modal" data-bs-toggle="modal"
-data-bs-target="#staticBackdropEdu">añadir</button>
-
-
+<!-- BOTON PARA AGREGAR -->
+ <button class="btn btn-secondary btn-modal" data-bs-toggle="modal"
+data-bs-target="#staticBackdropEdu"  *ngIf="adminBoton('/admin')" (click)="clickAddEducacion()">añadir</button>
+<!-- MODAL PARA AGREGAR -->
 <div
 class="modal fade"
 id="staticBackdropEdu"
@@ -139,7 +131,7 @@ aria-hidden="true"
       ></button>
     </div>
     <div class="modal-body">
-      <form class="add-form" [formGroup]="formValue">
+      <form class="add-form" [formGroup]="formValueAgregar">
         <div class="form-control form-group">
           <label for="educacionTitulo">Titulo</label>
           <input
@@ -152,7 +144,7 @@ aria-hidden="true"
         <div class="form-control">
           <label for="educacionDescripcion">Descripcion</label>
           <input
-            type="text"
+            type="text"           
             formControlName="educacionDescripcion"
             id="educacionDescripcion"
             placeholder="Añadir descripcion"
@@ -164,14 +156,15 @@ aria-hidden="true"
             type="text"
             formControlName="educacionLogo"
             id="educacionLogo"
-            placeholder="Añadir logo"
+            placeholder="Ejemplo bi bi-gear"
           />
+          <p>*Admite cualquier icono de Bootstrap</p>
         </div>
 
         <input
           type="submit"
           value="Añadir"
-          class="btn btn-primary"
+          class="btn btn-secondary"
           data-bs-dismiss="modal"
           (click)="postEducacionDetails()"
         />

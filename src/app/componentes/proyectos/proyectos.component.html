@@ -11,7 +11,8 @@
 
         <div class="col" *ngFor="let item of proyectos">
           <div class="card shadow-sm">
-            <svg
+            <img [src]="item.proyectoImg" alt="">
+           <!-- <svg
               class="bd-placeholder-img card-img-top"
               width="100%"
               height="225"
@@ -24,19 +25,20 @@
               <title>Placeholder</title>
               <rect width="100%" height="100%" fill="#55595c" />
               <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-            </svg>
+            </svg> -->
 
             <div class="card-body">
               <p class="card-title">{{ item.proyectoTitulo }}</p>
               <p class="card-text">{{ item.proyectoDescripcion }}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
+                <a href="{{item.proyectoLink}}">
                   <button
                     type="button"
-                    class="btn btn-sm btn-outline-secondary"
-                  >
+                    class="btn btn-sm btn-outline-secondary">
                     Ver
                   </button>
+                  </a>
                 </div>
                 <small class="text-muted">{{ item.proyectoFecha }}</small>
               </div>

@@ -10,11 +10,8 @@ import {FormBuilder, FormGroup} from '@angular/forms';
   templateUrl: './banner.component.html',
   styleUrls: ['./banner.component.css'],
 })
-export class BannerComponent implements OnInit {
- 
+export class BannerComponent implements OnInit { 
   faPen = faPen;
- 
-
   formValue !: FormGroup;
   bannerModelObj: Banner = new Banner();
   bannerData !: any;
@@ -44,8 +41,7 @@ export class BannerComponent implements OnInit {
    updateBannerDetails() {
      this.bannerModelObj.bannerImg = this.formValue.value.bannerImg;   
      this.bannerService.updateBanner(this.bannerModelObj, this.bannerModelObj.id)
-     .subscribe(res => {
-       alert ("Actualizado");
+     .subscribe(res => {       
        let ref = document.getElementById('cancel')
        ref?.click();
        this.formValue.reset();

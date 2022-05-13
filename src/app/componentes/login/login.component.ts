@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from 'src/app/servicios/users.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Users } from '../../users';
 import { HttpClient } from '@angular/common/http';
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 
-//import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,37 +11,42 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginComponent implements OnInit {
  
-  users: Users[] = [];
+ 
   public loginForm!: FormGroup;
   constructor(
-    private formBuilder: FormBuilder,
-    public userService: UsersService,
+    private formBuilder: FormBuilder,  
     private http: HttpClient,
-    private route: Router
-  ) {}
+    private ruta: Router,
+    private autenticacionService:AutenticacionService
+  ) {
+  
+    this.loginForm=this.formBuilder.group({
+      email: [''],
+      password: [''],
+      }) 
+
+  }
 
   ngOnInit(): void {
-    this.loginForm = this.formBuilder.group({
-      email: [''],
-      password: [''], 
-    });
+ 
   }
 
-  login() {
-    this.userService.loginA().subscribe((users) => {
-      const user = users.find((a: any) => {
-        return (
-          a.email === this.loginForm.value.email &&
-          a.password === this.loginForm.value.password
-        );
-      });
-      if (user) {
-        console.log(user);        
-        this.loginForm.reset();
-        this.route.navigate(['admin']);
-      } else {
-        alert('Login incorrecto');
-      }
-    });
-  }
+
+get Email() {
+  return this.loginForm.get('email');
 }
+
+get Password() {
+  return this.loginForm.get('password');
+}
+
+login(event: Event) { 
+  event.preventDefault;
+  this.autenticacionService.iniciarSesion(this.loginForm.value).subscribe(data =>{
+    console.log("DATA: " + JSON.stringify(data));
+    this.ruta.navigate(['/admin']);       
+  })
+} 
+
+}
+

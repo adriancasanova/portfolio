@@ -3,7 +3,6 @@ import { faPen, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { AboutService } from 'src/app/servicios/about.service';
 import { About } from 'src/app/about';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ThrowStmt } from '@angular/compiler';
 import { Router } from '@angular/router';
 
 @Component({
@@ -56,8 +55,7 @@ export class AboutComponent implements OnInit {
 
     this.aboutService
       .updateAbout(this.aboutModelObj, this.aboutModelObj.id)
-      .subscribe((res) => {
-        alert('Actualizado');
+      .subscribe((res) => {       
         let ref = document.getElementById('cancel');
         ref?.click();
         this.formValue.reset();

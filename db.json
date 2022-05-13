@@ -109,19 +109,25 @@
       "id": 1,
       "proyectoTitulo": "Lorem ipsum",
       "proyectoDescripcion": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo odio rem cupiditate nobis ipsum doloremque.",
-      "proyectoFecha": "18/08/2020"
+      "proyectoFecha": "18/08/2020",
+      "proyectoImg": "./assets/imagenes/imgBanner.jpg",
+      "proyectoLink": ""
     },
     {
       "id": 2,
       "proyectoTitulo": "Lorem ipsum",
       "proyectoDescripcion": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo odio rem cupiditate nobis ipsum doloremque.",
-      "proyectoFecha": "08/01/2021"
+      "proyectoFecha": "08/01/2021",
+      "proyectoImg": "./assets/imagenes/imgBanner.jpg",
+      "proyectoLink": ""
     },
     {
       "id": 3,
       "proyectoTitulo": "Lorem ipsum",
       "proyectoDescripcion": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo odio rem cupiditate nobis ipsum doloremque.",
-      "proyectoFecha": "06/05/2021"
+      "proyectoFecha": "06/05/2021",
+      "proyectoImg": "./assets/imagenes/imgBanner.jpg",
+      "proyectoLink": ""
     }
   ],
   "softs": [

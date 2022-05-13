@@ -9,18 +9,9 @@ import { About } from '../about';
   providedIn: 'root'
 })
 export class AboutService {
- // private apiUrl: string = 'http://localhost:5000/abouts/';
- private apiUrl: string = 'http://localhost:8080/portfolio/abouts/';
- constructor(private http: HttpClient) {}
-
-
-
- /* actualizarAbout(about: About): Observable<About[]> {
-    const url = `${this.apiUrl}/${about.id}`;
-    return this.http.put<About[]>(url, about, httpOptions);
-  } */
-
-/* Esto es parte del otro video de crud */
+// private apiUrl: string = 'http://localhost:8080/portfolio/abouts/';
+private apiUrl: string = 'https://portfolioargentinaprograma.herokuapp.com/portfolio/abouts/'; 
+constructor(private http: HttpClient) {}
 
 postAbout(about: About) {
   return this.http.post<About[]>(this.apiUrl, about)

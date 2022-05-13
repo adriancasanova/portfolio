@@ -7,10 +7,9 @@ import {map} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class NavbarService {
-  //private apiUrl: string = 'http://localhost:5000/navbars/';
-  private apiUrl: string = 'http://localhost:8080/portfolio/navbars/';
+ // private apiUrl: string = 'http://localhost:8080/portfolio/navbars/';
+ private apiUrl: string = 'https://portfolioargentinaprograma.herokuapp.com/portfolio/navbars/';
   constructor(private http: HttpClient) {}
-
  
   getsNavbar() {
     return this.http.get<Navbar[]>(this.apiUrl)

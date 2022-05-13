@@ -1,7 +1,5 @@
 <h1>{{ habilidadesTitulo }}</h1>
 <div class="row contenedorSkills">
-
-
   <div class="card" style="width: 18rem">
     <div class="skill">
       <div class="outer">
@@ -24,10 +22,8 @@
         <circle cx="80" cy="80" r="70" stroke-linecap="round" />
       </svg>
     </div>
-
     <div class="card-body" >
       <h5 class="card-title">{{ skillSoft }}</h5>
-
       <ul class="list-group list-group-flush" *ngFor="let item of softs">
         <li class="list-group-item">{{ item.skill }}</li>    
       </ul>
@@ -90,15 +86,11 @@
         <circle cx="80" cy="80" r="70" stroke-linecap="round" class="circle2" />
       </svg>
     </div>
-
     <div class="card-body" >
       <h5 class="card-title">{{ idiomasTitulo }}</h5>
-
       <ul class="list-group list-group-flush"*ngFor="let item of idiomas" >
         <li class="list-group-item">{{ item.skill }}</li>      
       </ul>
     </div>
   </div>
-
-
 </div>

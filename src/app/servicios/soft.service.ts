@@ -8,9 +8,8 @@ import {map} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class SoftService {
-
- // private apiUrl: string = 'http://localhost:5000/softs';
- private apiUrl: string = 'http://localhost:8080/portfolio/softs/';
+ //private apiUrl: string = 'http://localhost:8080/portfolio/softs/';
+ private apiUrl: string = 'https://portfolioargentinaprograma.herokuapp.com/portfolio/softs/';
  constructor(private http: HttpClient) {}
 
   getSoft(): Observable<Soft[]> {

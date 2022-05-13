@@ -34,3 +34,7 @@
 .logoUdemy {
   width: bold !important;
 }
+.nav {
+  z-index: 1;
+  margin-top: -35px;
+}

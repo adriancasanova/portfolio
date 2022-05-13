@@ -1,11 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { ExperienciaService } from 'src/app/servicios/experiencia.service';
-import { Experiencia } from 'src/app/experiencia';
-import { Subscription } from 'rxjs';
-import { EXPERIENCIA } from '../../mock';
-
-
-
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-experiencia',
@@ -13,33 +9,20 @@ import { EXPERIENCIA } from '../../mock';
   styleUrls: ['./experiencia.component.css'],
 })
 export class ExperienciaComponent implements OnInit {
-  experiencias: Experiencia[] = [];
+  @Output() onAdd: EventEmitter<any> = new EventEmitter();
+  
    constructor(   
-    private experienciaService: ExperienciaService    
+    private experienciaService: ExperienciaService,   
+    private route: Router,
+    private formBuilder: FormBuilder 
   ) {}
   
   titleExperiencia: string = 'Experiencia';
- // @Input () experiencia!: Experiencia 
-//@Input() onExperiencia: EventEmitter<Experiencia> = new EventEmitter();
-  //experiencia!: Experiencia;
- /* 
-  
- // @Input() prueba: any = '';
-  experiencia: Experiencia[] = [];  */
  
-  ngOnInit(): void {
-
+  ngOnInit(): void { 
+ 
   }
-/*
-  addExperiencia(experiencia: Experiencia) {
-    this.experienciaService
-      .addExperiencia(experiencia)
-      .subscribe((experiencia) => {
-        this.experiencias.push(experiencia);
-      });
-  }
- 
- 
- */
 
 }
+
+

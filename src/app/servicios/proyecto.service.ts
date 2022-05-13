@@ -7,9 +7,9 @@ import { Proyecto } from '../proyecto';
   providedIn: 'root'
 })
 export class ProyectoService {
- // private apiUrl: string = 'http://localhost:5000/proyectos';
- private apiUrl: string = 'http://localhost:8080/portfolio/proyectos/';
-  constructor(private http: HttpClient) {}
+ //private apiUrl: string = 'http://localhost:8080/portfolio/proyectos/';
+ private apiUrl: string = 'https://portfolioargentinaprograma.herokuapp.com/portfolio/proyectos/'; 
+ constructor(private http: HttpClient) {}
 
   getProyecto(): Observable<Proyecto[]> {
     return this.http.get<Proyecto[]>(this.apiUrl);

@@ -15,5 +15,6 @@
     cursor: pointer;
   }
   .btn-modal {
-    margin-left: 87%;
+    margin-left: auto;
+   width: 100%;
   }

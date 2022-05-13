@@ -2,10 +2,11 @@
   <form
     class="custom-form"
     method=""
-    (ngSubmit)="login()"
+    (ngSubmit)="login($event)"
     [formGroup]="loginForm"
   >
-    <h1>Login</h1>
+    <h1>Login</h1> 
+    
     <input
       type="email"
       formControlName="email"
@@ -18,7 +19,7 @@
       placeholder="password"
       required="required"
     />
-
+    <p>Usuario: admin - Contraseña: admin</p>
     <button type="submit">Login</button>
   </form>
 </div>

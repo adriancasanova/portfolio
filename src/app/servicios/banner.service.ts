@@ -7,10 +7,9 @@ import {map} from 'rxjs/operators';
   providedIn: 'root',
 })
 export class BannerService {
- // private apiUrl: string = 'http://localhost:5000/banners/';
- private apiUrl: string = 'http://localhost:8080/portfolio/banners/';
+ //private apiUrl: string = 'http://localhost:8080/portfolio/banners/';
+ private apiUrl: string = 'https://portfolioargentinaprograma.herokuapp.com/portfolio/banners';
  constructor(private http: HttpClient) {}
-  
 
   getsBanner() {
     return this.http.get<Banner[]>(this.apiUrl)

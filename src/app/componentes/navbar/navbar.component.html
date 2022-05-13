@@ -1,8 +1,10 @@
-<nav class="navbar navbar-expand-lg navbar-light bg">
-  <div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-light bg">  
+  
+  <div class="container-fluid">    
+    <div>
     <img width="40" alt="Logo de Argentina programa" src="{{ navbarLogo }}" />
-
-    <a class="navbar-brand" href="#">{{ navbarBrand }}</a>
+    <a class="navbar-brand nav" href="https://www.argentina.gob.ar/produccion/transformacion-digital-y-economia-del-conocimiento/argentina-programa">{{ navbarBrand }}</a>
+  </div>
     <button
       class="navbar-toggler"
       type="button"
@@ -36,7 +38,7 @@
               class="bi bi-youtube color"
               viewBox="0 0 16 16"
             >
-              <path [attr.d]="navbar.logo" />
+              <path [attr.]="navbar.logo" />
             </svg>
           </a>
         </li>
@@ -45,20 +47,21 @@
       <form class="d-flex">
         <button
           class="btn btn-outline-light"
-          type="submit"
+          type="button"
           routerLink="/login"
           *ngIf="Loguear('/portfolio')"
         >
           <app-login *ngIf="hasRoute('/login')"> </app-login>
           {{ loginboton }}
-        </button>
+        </button>       
         <button
           class="btn btn-outline-danger"
           routerLink="/portfolio"
           *ngIf="Logueado('/admin')"
         >
           Logout
-        </button>
+        </button>      
+   
       </form>
     </div>
   </div>

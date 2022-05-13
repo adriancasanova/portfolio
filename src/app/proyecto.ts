@@ -3,5 +3,7 @@ export interface Proyecto {
     proyectoTitulo: string;
     proyectoDescripcion: string;
     proyectoFecha: string;
+    proyectoImg: string;
+    proyectoLink: string;
   }
   
