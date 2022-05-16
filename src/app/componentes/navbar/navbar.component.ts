@@ -12,7 +12,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class NavbarComponent implements OnInit {
   user: any;
   navbarBrand: string = '#YoProgramo';
-  navbarLogo: string = 'assets/imagenes/logoArgentinaPrograma2.jpg';
+  navbarLogo: string = 'assets/imagenes/logoArgentinaPrograma2.avif';
   loginboton: string = 'Login';
 
   formValue!: FormGroup;
