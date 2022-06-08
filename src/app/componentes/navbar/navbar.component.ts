@@ -4,6 +4,7 @@ import { faPen } from '@fortawesome/free-solid-svg-icons';
 import { NavbarService } from 'src/app/servicios/navbar.service';
 import { Navbar } from 'src/app/navbar';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -21,7 +22,8 @@ export class NavbarComponent implements OnInit {
   constructor(
     private router: Router,
     private navbarService: NavbarService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private autenticacionService: AutenticacionService
   ) {}
   faPen = faPen;
 
@@ -49,4 +51,10 @@ export class NavbarComponent implements OnInit {
   Loguear(route: string) {
     return this.router.url === route;
   }
+  desloguear() {
+   
+    sessionStorage.removeItem('currentUser');
+    this.autenticacionService.currentUserSubject.next(null);
+}
+
 }

@@ -9,10 +9,10 @@ import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements OnInit {
- 
+export class LoginComponent implements OnInit { 
  
   public loginForm!: FormGroup;
+  
   constructor(
     private formBuilder: FormBuilder,  
     private http: HttpClient,

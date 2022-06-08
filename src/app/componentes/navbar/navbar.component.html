@@ -50,6 +50,7 @@
           class="btn btn-outline-danger"
           routerLink="/portfolio"
           *ngIf="Logueado('/admin')"
+          (click)="desloguear()"
         >
           Logout
         </button>      
